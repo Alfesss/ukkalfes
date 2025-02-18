@@ -16,106 +16,97 @@
         }
 
         body {
-            background-color: #0a0a0a;
+            background-color: #000000;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #00ff00;
+            color: #000000;
         }
 
         .container-box {
-            max-width: 900px;
-            background: #0a0a0a;
-            border-radius: 20px;
+            max-width: 900px; /* Increased from 700px */
+            background: #FFEFD5;
+            border-radius: 8px;
             overflow: hidden;
             display: flex;
-            border: 2px solid #00ff00;
-            box-shadow: 20px 20px 60px rgba(0, 255, 0, 0.1),
-                       -20px -20px 60px rgba(0, 255, 0, 0.1),
-                       0 0 20px rgba(0, 255, 0, 0.3);
+            border: 2px solid #000000;
+            box-shadow: 15px 0 45px rgba(255, 239, 213, 0.1);
         }
 
         .left-side {
-            background: #0a0a0a;
-            color: #00ff00;
-            padding: 50px;
+            background: #FFEFD5;
+            color: #000000;
+            padding: 30px;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            border-right: 2px solid #00ff00;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            border-right: 2px solid #000000;
         }
 
         .right-side {
             flex: 1;
-            padding: 50px;
-            background: #0a0a0a;
+            padding: 30px;
+            background: #FFEFD5;
         }
 
         .form-control {
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            border-radius: 10px;
-            padding: 10px 15px;
-            box-shadow: inset 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       inset -5px -5px 10px rgba(0, 255, 0, 0.1);
+            background: #FFEFD5;
+            border: 2px solid #000000;
+            color: #000000;
+            border-radius: 8px;
+            padding: 8px 12px;
         }
 
         .form-control:focus {
-            background: #0a0a0a;
-            color: #00ff00;
-            border-color: #00ff00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            background: #FFEFD5;
+            color: #000000;
+            border-color: #000000;
+            box-shadow: none;
         }
 
         .form-label {
-            color: #00ff00;
-            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            color: #000000;
+            font-size: 0.9rem;
         }
 
         .btn {
-            padding: 10px 20px;
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            background: #0a0a0a;
-            color: #00ff00;
-            box-shadow: 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       -5px -5px 10px rgba(0, 255, 0, 0.1),
-                       0 0 10px rgba(0, 255, 0, 0.3);
+            padding: 8px 16px;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            background: #FFEFD5;
+            color: #000000;
             transition: all 0.3s ease;
         }
 
         .btn:hover {
-            background: #00ff00;
-            color: #0a0a0a;
+            background: #000000;
+            color: #FFEFD5;
         }
 
         .alert {
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       -5px -5px 10px rgba(0, 255, 0, 0.1);
+            background: #FFEFD5;
+            border: 2px solid #000000;
+            color: #000000;
+            border-radius: 8px;
+            font-size: 0.9rem;
         }
 
         a {
-            color: #00ff00;
+            color: #000000;
             text-decoration: none;
-            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            font-size: 0.9rem;
         }
 
         a:hover {
-            color: #00cc00;
+            color: #808080;
         }
 
         h2 {
-            color: #00ff00;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            color: #000000;
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -125,8 +116,8 @@
         <div class="container-box">
             <!-- Left Side -->
             <div class="left-side">
-                <h1 class="fw-bold">Selamat Datang!</h1>
-                <p>Silakan daftar untuk melanjutkan.</p>
+                <h1 class="fw-bold" style="font-size: 1.5rem;">Selamat Datang!</h1>
+                <p style="font-size: 0.9rem;">Silakan daftar untuk melanjutkan.</p>
             </div>
 
             <!-- Right Side (Login Form) -->
@@ -149,24 +140,24 @@
                 <h2 class="text-center">Registrasi</h2>
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="form-label">Nama</label>
                         <input type="text" name="name" class="form-control" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="form-label">Konfirmasi Password</label>
                         <input type="password" name="password_confirmation" class="form-control" required>
                     </div>
                     <button type="submit" class="btn w-100">Daftar</button>
-                    <center class="mt-3">Sudah punya akun? <a href="/login">Login</a></center>
+                    <center class="mt-2" style="font-size: 0.9rem;">Sudah punya akun? <a href="/login">Login</a></center>
                 </form>
             </div>
         </div>

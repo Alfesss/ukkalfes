@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="neu-container p-4 mt-5">
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="neu-container p-5">
         <h1 class="neu-title text-center mb-4">Edit Task</h1>
         
         <form action="{{ route('todolist.updateNama', $todolist->id) }}" method="POST">
             @csrf
             @method('PATCH')
 
-            <div class="mb-4">
+            <div class="mb-3">
                 <label for="nama_tugas" class="neu-label mb-2">Task Name</label>
                 <input type="text" name="nama_tugas" class="neu-input form-control" value="{{ $todolist->nama_tugas }}" required>
             </div>
 
-            <div class="d-flex justify-content-between mt-5">
+            <div class="d-flex justify-content-between mt-4">
                 <button type="submit" class="neu-button neu-button-primary">
                     <i class="fas fa-save me-2"></i>Save Changes
                 </button>
@@ -29,59 +29,63 @@
 <style>
 body {
     background: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .neu-container {
-    background: #000000;
-    border-radius: 20px;
-    box-shadow: 9px 9px 16px rgba(0,255,0,0.2), -9px -9px 16px rgba(0,255,0,0.1),
-                0 0 5px #00ff00, 
-                0 0 10px #00ff00,
-                0 0 15px #00ff00;
-    border: 2px solid #00ff00;
+    background: #FFEFD5;
+    border-radius: 10px;
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000000;
+    width: 100%;
+    max-width: 800px; /* Increased from 600px */
 }
 
 .neu-title {
-    color: #00ff00;
-    font-weight: 600;
+    color: #000000;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
 .neu-label {
-    color: #00ff00;
-    font-weight: 500;
+    color: #000000;
+    font-weight: 400;
 }
 
 .neu-input {
-    border: none;
-    background: #2d2d2d;
-    border-radius: 12px;
-    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.4), inset -5px -5px 10px rgba(255,255,255,0.1);
-    padding: 12px 16px;
-    color: #00ff00;
+    background: #FFEFD5;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: #000000;
+    font-size: 0.9rem;
+    width: 100%;
 }
 
 .neu-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 12px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: transparent;
 }
 
 .neu-button:hover {
-    transform: translateY(-2px);
+    background: #000000;
+    color: #FFEFD5;
 }
 
 .neu-button-primary {
-    background: #006400;
-    color: #00ff00;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.4), -5px -5px 10px rgba(255,255,255,0.1);
+    color: #000000;
 }
 
 .neu-button-secondary {
-    background: #2d2d2d;
-    color: #00ff00;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.4), -5px -5px 10px rgba(255,255,255,0.1);
+    color: #000000;
     text-decoration: none;
 }
 </style>

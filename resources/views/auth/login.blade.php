@@ -17,120 +17,114 @@
         }
 
         body {
-            background-color: #0a0a0a;
+            background-color: #000000;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #00ff00;
+            color: #000000;
         }
 
         .container-box {
             max-width: 900px;
-            background: #0a0a0a;
-            border-radius: 20px;
+            background: #FFEFD5;
+            border-radius: 10px;
             overflow: hidden;
             display: flex;
-            border: 2px solid #00ff00;
-            box-shadow: 20px 20px 60px rgba(0, 255, 0, 0.1),
-                       -20px -20px 60px rgba(0, 255, 0, 0.1),
-                       0 0 20px rgba(0, 255, 0, 0.3);
+            border: 2px solid #000000;
+            box-shadow: 20px 0 60px rgba(255, 239, 213, 0.1);
         }
 
         .left-side {
-            background: #0a0a0a;
-            color: #00ff00;
+            background: #FFEFD5;
+            color: #000000;
             padding: 50px;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            border-right: 2px solid #00ff00;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            border-right: 2px solid #000000;
         }
 
         .right-side {
             flex: 1;
             padding: 50px;
-            background: #0a0a0a;
+            background: #FFEFD5;
         }
 
         .form-control {
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            border-radius: 10px;
+            background: #FFEFD5;
+            border: 2px solid #000000;
+            color: #000000;
+            border-radius: 6px;
             padding: 10px;
             margin-bottom: 15px;
-            box-shadow: inset 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       inset -5px -5px 10px rgba(0, 255, 0, 0.1);
         }
 
         .form-control:focus {
             outline: none;
-            background: #0a0a0a;
-            color: #00ff00;
-            border-color: #00ff00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            background: #FFEFD5;
+            color: #000000;
+            border-color: #000000;
+            box-shadow: none;
         }
 
         .btn {
             padding: 10px 20px;
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            background: #0a0a0a;
-            color: #00ff00;
+            border: 2px solid #000000;
+            border-radius: 6px;
+            background: #FFEFD5;
+            color: #000000;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 8px 8px 16px rgba(0, 255, 0, 0.1),
-                       -8px -8px 16px rgba(0, 255, 0, 0.1);
+            font-size: 0.9rem;
         }
 
         .btn:hover {
-            background: #00ff00;
-            color: #0a0a0a;
+            background: #000000;
+            color: #FFEFD5;
         }
 
         .form-check-input {
-            background-color: #0a0a0a;
-            border: 2px solid #00ff00;
+            background-color: #FFEFD5;
+            border: 2px solid #000000;
         }
 
         .form-check-input:checked {
-            background-color: #00ff00;
-            border-color: #00ff00;
+            background-color: #000000;
+            border-color: #000000;
         }
 
         .form-check-label {
-            color: #00ff00;
+            color: #000000;
         }
 
         .alert {
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            background: #FFEFD5;
+            border: 2px solid #000000;
+            color: #000000;
+            border-radius: 6px;
         }
 
         a {
-            color: #00ff00;
+            color: #000000;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         a:hover {
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            color: #808080;
         }
 
         h2 {
-            color: #00ff00 !important;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            color: #000000 !important;
+            font-weight: 500;
+            font-size: 1.5rem;
         }
 
         label {
-            color: #00ff00;
+            color: #000000;
         }
     </style>
 </head>

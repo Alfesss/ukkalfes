@@ -17,32 +17,32 @@
         }
 
         body {
-            background-color: #0a0a0a;
+            background-color: #FFEFD5;
             min-height: 100vh;
             display: grid;
             grid-template-columns: auto 1fr;
-            color: #00ff00;
+            color: #000000;
             transition: all 0.3s ease;
             overflow: hidden;
         }
 
         .sidebar {
-            background: #0a0a0a;
-            color: #00ff00;
-            padding: 2rem;
+            background: #000000;
+            color: #ffffff;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            border-right: 2px solid #00ff00;
-            box-shadow: 20px 0 60px rgba(0, 255, 0, 0.1);
-            width: 300px;
+            border-right: 2px solid #000000;
+            box-shadow: 20px 0 60px rgba(0, 0, 0, 0.1);
+            width: 200px;
             transition: all 0.3s ease;
             position: relative;
             height: 100vh;
         }
 
         .sidebar.collapsed {
-            width: 80px;
-            padding: 2rem 1rem;
+            width: 60px;
+            padding: 1.5rem 0.5rem;
         }
 
         .sidebar.collapsed .nav-link span,
@@ -54,9 +54,9 @@
             position: absolute;
             right: -15px;
             top: 20px;
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
+            background: #000000;
+            border: 2px solid #FFEFD5;
+            color: #ffffff;
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -69,15 +69,14 @@
         }
 
         .toggle-btn:hover {
-            background: #00ff00;
-            color: #0a0a0a;
+            background: #FFEFD5;
+            color: #000000;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: #00ff00;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            color: #ffffff;
             margin-bottom: 2rem;
             text-align: center;
             white-space: nowrap;
@@ -85,13 +84,12 @@
         }
 
         .nav-link {
-            color: #00ff00;
+            color: #ffffff;
             text-decoration: none;
-            padding: 1rem;
+            padding: 0.8rem;
             margin: 0.5rem 0;
             border-radius: 8px;
-            border: 2px solid #00ff00;
-            box-shadow: 5px 5px 10px rgba(0, 255, 0, 0.1);
+            border: 2px solid #FFEFD5;
             transition: all 0.3s ease;
             text-align: center;
             white-space: nowrap;
@@ -99,27 +97,25 @@
         }
 
         .nav-link:hover {
-            background: #00ff00;
-            color: #0a0a0a;
-            transform: translateY(-2px);
+            background: #FFEFD5;
+            color: #000000;
         }
 
         .main-content {
             padding: 2rem;
-            background: #0a0a0a;
+            background: #FFEFD5;
             height: 100vh;
             overflow-y: auto;
             border-radius: 0;
             border: none;
-            border-left: 2px solid #00ff00;
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            border-left: 2px solid #000000;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         .header {
             margin-bottom: 2rem;
-            color: #00ff00;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            color: #000000;
         }
 
         .task-table {
@@ -129,37 +125,37 @@
         }
 
         .task-table th {
-            background: rgba(0, 255, 0, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             padding: 1rem;
             text-align: left;
-            border-bottom: 2px solid #00ff00;
-            color: #00ff00;
+            border-bottom: 2px solid #000000;
+            color: #000000;
         }
 
         .task-table td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
-            color: #00ff00;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            color: #000000;
         }
 
         .btn {
             padding: 0.5rem 1rem;
-            border: 2px solid #00ff00;
+            border: 2px solid #000000;
             border-radius: 6px;
             background: transparent;
-            color: #00ff00;
+            color: #000000;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .btn-danger {
             border-color: #ff0000;
-            color: #ff0000;
+            color: #ffffff;
+            background: #ff0000;
         }
 
         .btn-danger:hover {
-            background: #ff0000;
-            color: #0a0a0a;
+            background: #cc0000;
         }
 
         .badge {
@@ -169,17 +165,15 @@
         }
 
         .badge-warning {
-            background: #0a0a0a;
-            color: #ffd700;
+            background: #ffd700;
+            color: #000000;
             border: 2px solid #ffd700;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
         }
 
         .badge-success {
-            background: #0a0a0a;
-            color: #00ff00;
+            background: #00ff00;
+            color: #000000;
             border: 2px solid #00ff00;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
         }
     </style>
     <script>

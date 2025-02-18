@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neumorphic To-Do</title>
+    <title>Todolist App</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,77 +14,102 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a;
-            color: #fff;
+            background-color: #FFEFD5;
+            color: #000000;
             line-height: 1.6;
         }
 
         .hero-section {
             height: 100vh;
-            background-color: #0a0a0a;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: space-between;
             padding: 0 20px;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            position: relative;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 600px;
             padding: 50px;
-            border-radius: 20px;
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: 20px 20px 60px rgba(0, 255, 0, 0.1),
-                       -20px -20px 60px rgba(0, 255, 0, 0.1),
-                       0 0 20px rgba(0, 255, 0, 0.3);
+            position: relative;
+            margin-left: 50px;
+        }
+
+        .hero-header {
+            position: relative;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: flex-start;
         }
 
         .hero-title {
-            font-size: 3.5rem;
-            color: #00ff00;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            font-size: 2.5rem;
+            color: #000000;
+            font-weight: 500;
+            text-align: left;
+            width: 100%;
+            z-index: 1;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: #00cc00;
+            font-size: 1.2rem;
+            color: #000000;
             margin-bottom: 2rem;
             font-weight: 300;
-            text-shadow: 0 0 8px rgba(0, 204, 0, 0.5);
+            text-align: left;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .pemanah-image {
+            width: 300px;
+            height: auto;
+            margin-right: 50px;
+            transform: scaleX(-1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: scaleX(-1) translateY(0px);
+            }
+            50% {
+                transform: scaleX(-1) translateY(-10px);
+            }
+            100% {
+                transform: scaleX(-1) translateY(0px);
+            }
         }
 
         .btn {
-            padding: 15px 40px;
-            border: 2px solid #00ff00;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            padding: 12px 30px;
+            border: 2px solid #000000;
+            border-radius: 6px;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: #0a0a0a;
-            box-shadow: 8px 8px 16px rgba(0, 255, 0, 0.1),
-                       -8px -8px 16px rgba(0, 255, 0, 0.1),
-                       0 0 15px rgba(0, 255, 0, 0.3);
+            background: #FFEFD5;
         }
 
-        .btn:active {
-            box-shadow: inset 8px 8px 16px rgba(0, 255, 0, 0.1),
-                       inset -8px -8px 16px rgba(0, 255, 0, 0.1);
+        .btn:hover {
+            background: #000000;
+            color: #FFEFD5;
         }
 
         .btn-primary {
-            color: #00ff00;
+            color: #000000;
         }
 
         .features-section {
-            padding: 80px 20px;
-            background-color: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            padding: 60px 20px;
+            background-color: #FFEFD5;
         }
 
         .container {
@@ -100,15 +125,10 @@
         }
 
         .feature-card {
-            background: #0a0a0a;
-            padding: 40px 30px;
-            border-radius: 20px;
+            background: #FFEFD5;
+            padding: 30px 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 2px solid #00ff00;
-            box-shadow: 8px 8px 16px rgba(0, 255, 0, 0.1),
-                       -8px -8px 16px rgba(0, 255, 0, 0.1),
-                       0 0 15px rgba(0, 255, 0, 0.3);
         }
 
         .feature-card:hover {
@@ -116,86 +136,78 @@
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            color: #00ff00;
+            font-size: 2rem;
+            color: #000000;
             margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 50%;
+            padding: 15px;
             display: inline-block;
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: inset 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       inset -5px -5px 10px rgba(0, 255, 0, 0.1),
-                       0 0 15px rgba(0, 255, 0, 0.3);
         }
 
         .feature-title {
-            font-size: 1.5rem;
-            color: #00ff00;
+            font-size: 1.2rem;
+            color: #000000;
             margin-bottom: 15px;
-            text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
         }
 
         .feature-text {
-            color: #00cc00;
-            font-size: 1rem;
-            text-shadow: 0 0 5px rgba(0, 204, 0, 0.5);
+            color: #000000;
+            font-size: 0.9rem;
         }
 
         footer {
-            background-color: #0a0a0a;
-            color: #00ff00;
-            padding: 40px 20px;
+            background-color: #FFEFD5;
+            color: #000000;
+            padding: 30px 20px;
             text-align: center;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            border-radius: 20px;
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: 8px 8px 16px rgba(0, 255, 0, 0.1),
-                       -8px -8px 16px rgba(0, 255, 0, 0.1),
-                       0 0 15px rgba(0, 255, 0, 0.3);
         }
 
         .footer-links {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             margin-top: 20px;
         }
 
         .footer-links a {
-            color: #00ff00;
+            color: #000000;
             text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       -5px -5px 10px rgba(0, 255, 0, 0.1),
-                       0 0 10px rgba(0, 255, 0, 0.3);
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 6px;
         }
 
-        .footer-links a:active {
-            box-shadow: inset 5px 5px 10px rgba(0, 255, 0, 0.1),
-                       inset -5px -5px 10px rgba(0, 255, 0, 0.1);
+        .footer-links a:hover {
+            background: #000000;
+            color: #FFEFD5;
         }
 
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                width: 120px;
+            }
+            
+            .pemanah-image {
+                width: 200px;
+                margin-right: 20px;
+            }
+
+            .hero-content {
+                margin-left: 20px;
             }
         }
     </style>
@@ -203,10 +215,14 @@
 <body>
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Tugas Harian</h1>
-            <p class="hero-subtitle">Produktivitas Tanpa Batas. Selesaikan Tugas dengan Cerdas!</p>
-            <button class="btn btn-primary"><a href="{{ route('login') }}" style="color: #fff; text-decoration: none;">Login untuk melanjutkan</a></button>
+            <div class="hero-header">
+                <h1 class="hero-title">Todolist App</h1>
+                <img src="{{ asset('asset/todolist.png') }}" alt="Notes Icon" class="hero-image">
+            </div>
+            <p class="hero-subtitle">Bidik Target dan Raih Produktivitas!. Selesaikan Tugas dengan Cerdas!</p>
+            <a href="{{ route('login') }}" style="color: #000000; text-decoration: none;"><button class="btn btn-primary">Login untuk melanjutkan</button></a>
         </div>
+        <img src="{{ asset('asset/pemanah.png') }}" alt="Pemanah Icon" class="pemanah-image">
     </section>
 </body>
 </html>
