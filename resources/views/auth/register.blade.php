@@ -16,17 +16,17 @@
         }
 
         body {
-            background-color: #000000;
+            background-color: #FFEFD5;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #000000;
+            color: #FFEFD5;
         }
 
         .container-box {
             max-width: 900px; /* Increased from 700px */
-            background: #FFEFD5;
+            background: #000000;
             border-radius: 8px;
             overflow: hidden;
             display: flex;
@@ -35,8 +35,8 @@
         }
 
         .left-side {
-            background: #FFEFD5;
-            color: #000000;
+            background: #000000;
+            color: #FFEFD5;
             padding: 30px;
             flex: 1;
             display: flex;
@@ -49,7 +49,7 @@
         .right-side {
             flex: 1;
             padding: 30px;
-            background: #FFEFD5;
+            background: #000000;
         }
 
         .form-control {
@@ -68,7 +68,7 @@
         }
 
         .form-label {
-            color: #000000;
+            color: #FFEFD5;
             font-size: 0.9rem;
         }
 
@@ -95,7 +95,7 @@
         }
 
         a {
-            color: #000000;
+            color: #FFEFD5;
             text-decoration: none;
             font-size: 0.9rem;
         }
@@ -105,7 +105,7 @@
         }
 
         h2 {
-            color: #000000;
+            color: #FFEFD5;
             font-size: 1.5rem;
         }
     </style>

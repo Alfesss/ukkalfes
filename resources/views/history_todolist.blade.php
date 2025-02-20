@@ -175,6 +175,26 @@
             color: #000000;
             border: 2px solid #00ff00;
         }
+
+        .search-box {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: 2px solid #000000;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #000000;
+        }
     </style>
     <script>
         function toggleSidebar() {
@@ -183,6 +203,31 @@
             sidebar.classList.toggle('collapsed');
             toggleBtn.classList.toggle('fa-chevron-left');
             toggleBtn.classList.toggle('fa-chevron-right');
+        }
+
+        function searchTasks() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.querySelector('.task-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const taskName = rows[i].getElementsByTagName('td')[1];
+                if (taskName) {
+                    const text = taskName.textContent || taskName.innerText;
+                    if (text.toLowerCase().indexOf(filter) > -1) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function confirmDelete(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus tugas ini?')) {
+                document.getElementById('delete-form-' + id).submit();
+            }
         }
     </script>
 </head>
@@ -207,6 +252,10 @@
             <p>Berikut adalah semua tugas yang pernah Anda buat.</p>
         </div>
 
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" onkeyup="searchTasks()" placeholder="Cari tugas...">
+        </div>
+
         <table class="task-table">
             <thead>
                 <tr>
@@ -215,6 +264,7 @@
                     <th>Status</th>
                     <th>Tugas dibuat pada</th>
                     <th>Diselesaikan Pada</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -231,6 +281,15 @@
                         </td>
                         <td>{{ \Carbon\Carbon::parse($todolist->created_at)->translatedFormat('l, d F Y H:i:s') }} WIB</td>
                         <td>{{ $todolist->status_tugas == 'completed' ? $todolist->updated_at->format('l, d F Y H:i:s') : '-' }}</td>
+                        <td>
+                            <form id="delete-form-{{ $todolist->id }}" action="{{ route('todolist.destroy', $todolist->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $todolist->id }})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

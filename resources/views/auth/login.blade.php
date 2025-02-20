@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Register</title>
+    <title>Login </title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -17,17 +17,17 @@
         }
 
         body {
-            background-color: #000000;
+            background-color: #FFEFD5;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #000000;
+            color: #FFEFD5;
         }
 
         .container-box {
             max-width: 900px;
-            background: #FFEFD5;
+            background: #000000;
             border-radius: 10px;
             overflow: hidden;
             display: flex;
@@ -36,8 +36,8 @@
         }
 
         .left-side {
-            background: #FFEFD5;
-            color: #000000;
+            background: #000000;
+            color: #FFEFD5;
             padding: 50px;
             flex: 1;
             display: flex;
@@ -50,7 +50,7 @@
         .right-side {
             flex: 1;
             padding: 50px;
-            background: #FFEFD5;
+            background: #000000;
         }
 
         .form-control {
@@ -97,7 +97,7 @@
         }
 
         .form-check-label {
-            color: #000000;
+            color: #FFEFD5;
         }
 
         .alert {
@@ -108,7 +108,7 @@
         }
 
         a {
-            color: #000000;
+            color: #FFEFD5;
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -118,13 +118,13 @@
         }
 
         h2 {
-            color: #000000 !important;
+            color: #FFEFD5 !important;
             font-weight: 500;
             font-size: 1.5rem;
         }
 
         label {
-            color: #000000;
+            color: #FFEFD5;
         }
     </style>
 </head>
